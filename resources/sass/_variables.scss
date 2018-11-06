@@ -1,20 +1,171 @@
 
 // Body
-$body-bg: #f8fafc;
+$body-bg: #f2f2f2;
 
 // Typography
-$font-family-sans-serif: "Nunito", sans-serif;
-$font-size-base: 0.9rem;
+$font-family-sans-serif: "Kanit", sans-serif;
+$font-size-base: 1rem;
 $line-height-base: 1.6;
 
 // Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+
+$soc-orange : #ff6500;
+$soc-gray : #909090;
+
+//footer
+.footer-bg-color{
+    background-color: #d8d8d8;
+}
+
+.text-footer {
+    font-size: 0.9rem;
+  color: #6c757d !important;
+}
+
+a.text-footer:hover,
+a.text-footer:focus {
+  color: #545b62 !important;
+}
+$colors: (
+  "soc-orange" : $soc-orange,
+  "soc-gray" : $soc-gray 
+) !default;
+
+//Soc link
+//link orange
+$link : #fa5400 !important;;
+$hover : #fa6900 !important;;
+$forcus :  #fa6900 !important;;
+//link dark gray
+$link2 : #595959 !important;;
+$hover2 : #454545 !important;;
+$forcus2 :  #454545 !important;;
+
+.soc-link1 {
+  color:$link;
+}
+a.soc-link1{  
+  &:hover{
+    color:$hover;
+    text-decoration: none;
+  }
+  &:focus{
+    color:$forcus;
+    text-decoration: none;
+  }
+}
+
+.soc-link2 {
+  color:$link2;
+}
+a.soc-link2{  
+  &:hover{
+    color:$hover2;
+    text-decoration: none;
+  }
+  &:focus{
+    color:$forcus2;
+    text-decoration: none;
+  }
+}
+//Slide Major
+
+.accordian {
+	height: 320px;
+    overflow: hidden;
+    background: #f2f2f2;
+	
+	/*Time for some styling*/
+	margin: 100px auto;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+/*A small hack to prevent flickering on some browsers*/
+.accordian ul {
+	width: 1200px;
+	/*This will give ample space to the last item to move
+	instead of falling down/flickering during hovers.*/
+}
+
+.accordian li {
+	position: relative;
+	display: block;
+	width: 160px;
+	float: left;
+	
+	border-left: 1px solid #888;
+	
+	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	
+	/*Transitions to give animation effect*/
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	/*If you hover on the images now you should be able to 
+	see the basic accordian*/
+}
+
+/*Reduce with of un-hovered elements*/
+.accordian ul:hover li {width: 40px;}
+/*Lets apply hover effects now*/
+/*The LI hover style should override the UL hover style*/
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+	display: block;
+}
+
+/*Image title styles*/
+.image_title {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0; bottom: 0;	
+width: 640px;	
+
+}
+.image_title a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 20px;
+	font-size: 16px;
+}
+
+//News
+.section-01{float: left; width: 100%;  border-top: 1px solid #d5d5d5; border-bottom: 1px solid #d5d5d5;background-color: #ffffff;}
+.section-01 .heading-large {border-bottom: 2px solid #fa6900; color: #fa6900; float: left; width: 100%; padding:0 0 6px; margin:0 0 18px; text-align: left;}
+.section-01 .heading-large::before, .section-01 .heading-large::after{background: transparent;}
+.section-01 .heading-small {border-bottom: 2px solid #fa6900; color: #fa6900; float: left; margin: 7px 0 0; width: 100%; padding-bottom: 10px; font-size: 18px }
+.section-01 .title-small {margin-bottom: 5px; font-size:17px }
+.section-01 .news-block{border-bottom: 1px dashed #000; padding-bottom: 30px; border: none;}
+.section-01 aside > .news-block{border-bottom: 1px dashed #000; padding-bottom: 19px;}
+.section-01 aside > .news-block:last-child{border-bottom: none; margin-bottom: 20px}
+.section-01 .card{border: none;}
+.section-01 .card-block{padding: 10px 0;}
+.section-01 .video-sec {float: left; margin-top: 30px; width: 100%;}
+.section-01 .video-block {float: left; margin-top: 20px; width: 100%;}
+
+.title-small {
+    color: #141517;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 6px 0 0;
+}
+
+.side-bar .nav-tabs{border-bottom:none;}
+.side-bar .nav-tabs .nav-link {color: #aeaeae; text-transform: uppercase; border: none;}
+.side-bar .nav-tabs .nav-link.active, .side-bar .nav-tabs .nav-link:hover{border-bottom:2px solid #fa6900;  text-transform: uppercase; color: #222}
+.sidebar-tabing .media{margin-top: 20px}
+.sidebar-tabing img{width: 120px;height: 100px;}
+.sidebar-tabing .title-small {line-height: 23px; margin-top: 5px; font-size: 18px}
+
+//info Socil Block
+.bg-soc-info {
+    background-color: #00BAB6;
+}
