@@ -54,24 +54,55 @@
                 </div>
                 <div class='row'>
                     <div class="col-md-12">
-                        <nav class='side-bar'>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-1-tab" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-1"
-                                    aria-selected="true">ประชาสัมพันธ์</a>
-                                <a class="nav-item nav-link" id="nav-2-tab" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2"
-                                    aria-selected="false">ทุนการศึกษา</a>
-                                <a class="nav-item nav-link" id="nav-3-tab" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-3"
-                                    aria-selected="false">การสมัครงาน</a>
-                                <a class="nav-item nav-link" id="nav-4-tab" data-toggle="tab" href="#nav-4" role="tab" aria-controls="nav-contact"
-                                    aria-selected="false">อบรมสัมมนา</a>
+                        <div class="p-2 bg-white rounded border shadow-sm mb-4">
+                            <nav class='side-bar'>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="nav-1-tab" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-1" aria-selected="true">ประชาสัมพันธ์</a>
+                                    <a class="nav-item nav-link" id="nav-2-tab" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">ทุนการศึกษา</a>
+                                    <a class="nav-item nav-link" id="nav-3-tab" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-3" aria-selected="false">การสมัครงาน</a>
+                                    <a class="nav-item nav-link" id="nav-4-tab" data-toggle="tab" href="#nav-4" role="tab" aria-controls="nav-contact" aria-selected="false">อบรมสัมมนา</a>
+                                </div>
+                            </nav>
+                            <div class="tab-content sidebar-tabing" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
+                                    <div class="media text-muted">
+                                        <p class="media-body  mb-0 small lh-125 border-bottom border-gray">
+                                            <strong class="d-block text-gray-dark">@username</strong> Donec id elit non mi porta gravida at eget metus. Fusce
+                                            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                        </p>
+                                    </div>
+                                    <div class="media text-muted">
+                                        <p class="media-body  mb-0 small lh-125 border-bottom border-gray">
+                                            <strong class="d-block text-gray-dark">@username</strong> Donec id elit non mi porta gravida at eget metus. Fusce
+                                            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                        </p>
+                                    </div>
+                                    <div class="media text-muted">
+                                        <p class="media-body  mb-0 small lh-125 border-bottom border-gray">
+                                            <strong class="d-block text-gray-dark">@username</strong> Donec id elit non mi porta gravida at eget metus. Fusce
+                                            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                        </p>
+                                    </div>
+                                    <div class="media text-muted">
+                                        <p class="media-body  mb-0 small lh-125 border-bottom border-gray">
+                                            <strong class="d-block text-gray-dark">@username</strong> Donec id elit non mi porta gravida at eget metus. Fusce
+                                            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                        </p>
+                                    </div>
+                                    <small class="d-block text-right mt-3">
+                                        <a class='soc-link1' href="#">ดูทั้งหมด</a>
+                                    </small>
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">2</div>
+                                <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-3-tab">3</div>
+                                <div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-4-tab">4</div>
                             </div>
-                        </nav>
-                        <div class="tab-content sidebar-tabing shadow-sm" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">1</div>
-                            <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">2</div>
-                            <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-3-tab">3</div>
-                            <div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-4-tab">4</div>
-                        </div>                        
+
+                           
+                            
+                        </div>
+
                     </div>
                 </div>
             </div>
