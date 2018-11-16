@@ -15,7 +15,9 @@
     return view('welcome');
 }); */
 
-Route::get('/', 'Homecontroller@getIndex');
+Route::get('/', 'HomeController@getIndex');
+Route::get('/news/{id}', 'NewsController@getNews');
+
 
 
 Route::group(['prefix' => 'admin'], function () {

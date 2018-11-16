@@ -68,43 +68,91 @@ a.soc-link2{
     text-decoration: none;
   }
 }
-//Slide Major
-.card {
-  margin: 0 auto;
+//Amazing effect
+.project {
+	width: 100%;
+	height: 200px;
+	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
+	background-size: cover;
+	background-position: center;
+	padding: 0 !important;
+	float:left;
 }
-.card .carousel-item {
-  height: 200px;
+
+.project-2 {
+	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
 }
-.card .carousel-caption {
-  padding: 0;
-  right: 0;
-  left: 0;
-  color: #3d3d3d;
+
+.project-3 {
+	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
 }
-.card .carousel-caption h3 {
-  color: #3d3d3d;
+
+.project-4 {
+	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
 }
-.card .carousel-caption p {
-  line-height: 30px;
+
+.project-hover {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	opacity: 0;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	background-color: rgba(186, 232, 2, 0.7);
+	padding: 10% 20px !important;
 }
-.card .carousel-caption .col-sm-3 {
-  display: flex;
-  align-items: center;
+
+.project-hover hr {
+	height: 30px;
+	width: 0;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	background-color: rgba(255, 255, 255, 1);
+	border: 0;
 }
-.card .carousel-caption .col-sm-9 {
-  text-align: left;
+
+.project-hover a {
+	color: rgba(255, 255, 255, 1);
+	padding: 2px 22px;
+	line-height: 40px;
+	border: 2px solid rgba(255, 255, 255, 1);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
-.navi a {
-    text-decoration:none;
+
+.project-hover a:hover {
+	border-color: rgba(51, 51, 51, 1);
+	color: rgba(51, 51, 51, 1);
+	background-color: #FFF;
 }
-a > .ico {
-    background-color: grey;
-    padding: 10px;
-    
+
+.project:hover .project-hover {
+	opacity: 1;
 }
-a:hover > .ico {
-    background-color: #666;
+
+.project:hover .project-hover hr {
+	width: 100%;
+	height: 5px;
 }
+$hover3:#fff;
+$forcus3:#fff;
+a.soc-link3{  
+  &:hover{
+    color:$hover3;
+    text-decoration: none;
+  }
+  &:focus{
+    color:$forcus3;
+    text-decoration: none;
+  }
+}
+
 
 //News
 .section-01{float: left; width: 100%;  border-top: 1px solid #d5d5d5; border-bottom: 1px solid #d5d5d5;background-color: #ffffff;}
@@ -139,3 +187,4 @@ a:hover > .ico {
 .bg-soc-info {
     background-color: #00BAB6;
 }
+

@@ -8,50 +8,22 @@
                     <div class="col-md-12">
                         <h4 class="heading-large">ข่าวสารสังคมศาสตร์</h4>
                     </div>
+                    @foreach ($news_1 as $news1)
+                       
                     <div class="col-md-6">
                         <div class="card mb-2">
-                            <img class="img-fluid" src="http://via.placeholder.com/300x150" alt="">
+                            <img class="img-fluid" src="{{ Voyager::image($news1->thumbnail('cropped','image'))}}">
                             <div class="card-body">
                                 <div class="card-title">
-                                    <h2 class="title-small"><a class='soc-link2' href="#">Why the world would end without political polls</a></h2>
+                                    <h2 class="title-small"><a class='soc-link2' href="{{ url("news/$news1->id")}}">{{ $news1->title }}</a></h2>
                                 </div>
-                                <p class="card-text soc-link2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text soc-link2 text-justify">{{str_limit($news1->body,150)}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card mb-2">
-                            <img class="img-fluid" src="http://via.placeholder.com/300x150" alt="">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <h2 class=" title-small"><a href="#">Why entertainment centers will make you question everything</a></h2>
-                                </div>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card mb-2">
-                            <img class="img-fluid" src="http://via.placeholder.com/300x150" alt="">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <h2 class=" title-small"><a href="#">The worst Movies about live tennis scores</a></h2>
-                                </div>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card mb-2"> <img class="img-fluid" src="http://via.placeholder.com/300x150" alt="">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <h2 class=" title-small"><a href="#">The complete beginner's guide to travel insurances</a></h2>
-                                </div>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
+
                 <div class='row'>
                     <div class="col-md-12">
                         <div class="p-2 bg-white rounded border shadow-sm mb-4">
@@ -63,40 +35,72 @@
                                     <a class="nav-item nav-link" id="nav-4-tab" data-toggle="tab" href="#nav-4" role="tab" aria-controls="nav-contact" aria-selected="false">อบรมสัมมนา</a>
                                 </div>
                             </nav>
-                            <div class="tab-content sidebar-tabing" id="nav-tabContent">
+                            <div class="tab-content sidebar-tabing mt-3" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
-                                    <div class="media text-muted">
-                                        <p class="media-body  mb-0 small lh-125 border-bottom border-gray">
-                                            <strong class="d-block text-gray-dark">@username</strong> Donec id elit non mi porta gravida at eget metus. Fusce
-                                            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                                        </p>
-                                    </div>
-                                    <div class="media text-muted">
-                                        <p class="media-body  mb-0 small lh-125 border-bottom border-gray">
-                                            <strong class="d-block text-gray-dark">@username</strong> Donec id elit non mi porta gravida at eget metus. Fusce
-                                            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                                        </p>
-                                    </div>
-                                    <div class="media text-muted">
-                                        <p class="media-body  mb-0 small lh-125 border-bottom border-gray">
-                                            <strong class="d-block text-gray-dark">@username</strong> Donec id elit non mi porta gravida at eget metus. Fusce
-                                            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                                        </p>
-                                    </div>
-                                    <div class="media text-muted">
-                                        <p class="media-body  mb-0 small lh-125 border-bottom border-gray">
-                                            <strong class="d-block text-gray-dark">@username</strong> Donec id elit non mi porta gravida at eget metus. Fusce
-                                            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                                        </p>
-                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                    @forelse ($news_1_1 as $news1_1)
+                                        <li class="list-group-item p-1 small">
+                                            <i class="fas fa-angle-right soc-link1"></i>
+                                            <a class="text-muted" href="{{ url("news/$news1_1->id")}}"">{{ str_limit($news1_1->title,90) }}</a> 
+                                        @inject('getDate','App\Thaidate')
+                                        <em class="soc-link1 small">{{ " ".$getDate->ThaiDate_Short(strtotime($news1_1->created_at)) }}</em></li>
+                                    @empty
+                                        <h5 class="m-5 small align-center text-center">ยังไม่มีข้อมูลข่าวสารในส่วนนี้</h5>
+                                    @endforelse     
+                                    </ul>                               
                                     <small class="d-block text-right mt-3">
                                         <a class='soc-link1' href="#">ดูทั้งหมด</a>
                                     </small>
                                     
                                 </div>
-                                <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">2</div>
-                                <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-3-tab">3</div>
-                                <div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-4-tab">4</div>
+                                <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">
+                                    <ul class="list-group list-group-flush">
+                                        @forelse ($news_2 as $news2)
+                                        <li class="list-group-item p-1 small">
+                                            <i class="fas fa-angle-right soc-link1"></i>
+                                            <a class="text-muted" href="{{ url("news/$news2->id")}}"">{{ str_limit($news2->title,90) }}</a> 
+                                            @inject('getDate','App\Thaidate')
+                                            <em class="soc-link1 small">{{ " ".$getDate->ThaiDate_Short(strtotime($news2->created_at)) }}</em></li>
+                                        @empty
+                                        <h5 class="m-5 small align-center text-center">ยังไม่มีข้อมูลข่าวสารในส่วนนี้</h5>
+                                        @endforelse
+                                    </ul>
+                                    <small class="d-block text-right mt-3">
+                                        <a class='soc-link1' href="#">ดูทั้งหมด</a>
+                                    </small>                                
+                                </div>
+                                <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-3-tab">
+                                    <ul class="list-group list-group-flush">
+                                        @forelse ($news_3 as $news3)
+                                        <li class="list-group-item p-1 small">
+                                            <i class="fas fa-angle-right soc-link1"></i>
+                                            <a class="text-muted" href="{{ url("news/$news3->id")}}"">{{ str_limit($news3->title,90) }}</a> 
+                                            @inject('getDate','App\Thaidate')
+                                            <em class="soc-link1 small">{{ " ".$getDate->ThaiDate_Short(strtotime($news3->created_at)) }}</em></li>
+                                        @empty
+                                        <h5 class="m-5 small align-center text-center">ยังไม่มีข้อมูลข่าวสารในส่วนนี้</h5>
+                                        @endforelse
+                                    </ul>
+                                    <small class="d-block text-right mt-3">
+                                        <a class='soc-link1' href="#">ดูทั้งหมด</a>
+                                    </small>                                
+                                </div>
+                                <div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-4-tab">
+                                    <ul class="list-group list-group-flush">
+                                        @forelse ($news_4 as $news4)
+                                        <li class="list-group-item p-1 small">
+                                            <i class="fas fa-angle-right soc-link1"></i>
+                                            <a class="text-muted" href="{{ url("news/$news4->id")}}"">{{ str_limit($news4->title,90) }}</a> 
+                                            @inject('getDate','App\Thaidate')
+                                            <em class="soc-link1 small">{{ " ".$getDate->ThaiDate_Short(strtotime($news4->created_at)) }}</em></li>
+                                        @empty
+                                        <h5 class="m-5 small align-center text-center">ยังไม่มีข้อมูลข่าวสารในส่วนนี้</h5>
+                                        @endforelse
+                                    </ul>
+                                    <small class="d-block text-right mt-3">
+                                        <a class='soc-link1' href="#">ดูทั้งหมด</a>
+                                    </small>                                
+                                </div>
                             </div>
 
                            
