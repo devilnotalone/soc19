@@ -42,9 +42,10 @@
             <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action list-group-item-light active">
                 ข่าวสารสังคมศาสตร์
-                </a>
-                @foreach ($news_type_all as $news_t_all)
-                        <a class="list-group-item list-group-item-action text-muted" href="{{ url("news/$newsall->id")}}""><h6>{{ $news_t_all->type }}</h6></a>            
+                </a>               
+                @foreach ($count_news as $count)
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center text-muted" href="{{ url("list_news/$count->news_type_id")}}"">{{ $count->type }}
+                        <span class="badge badge-primary badge-pill">{{ $count->count_type}}</span></a>            
                 @endforeach                
             </div> 
             

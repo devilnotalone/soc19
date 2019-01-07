@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\News;
 use App\NewsType;
+use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
 {
@@ -17,7 +18,8 @@ class NewsController extends Controller
             ->orderBy('created_at','desc')
             ->take(5)
             ->get();
-        $data['news_type_all'] = NewsType::all();
+        $data['count_news'] = News::with(['types_n'])
+            ->get();
 
         return view('front.news', $data);
     }
