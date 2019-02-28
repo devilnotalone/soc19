@@ -1,7 +1,5 @@
 @include('partials.meta')
-@include('partials.header')
-@include('partials.slide')
-
+@include('partials.header1')
 <main>
     @yield('content')
 </main>

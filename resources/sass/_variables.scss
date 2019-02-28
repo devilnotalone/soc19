@@ -1,190 +1,37 @@
+@charset "utf-8";
 
-// Body
-$body-bg: #f2f2f2;
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Kanit:300,400,700');
 
-// Typography
-$font-family-sans-serif: "Kanit", sans-serif;
-$font-size-base: 1rem;
-$line-height-base: 1.6;
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
 
-// Colors
+// Update Bulma's global variables
+$family-sans-serif: "Kanit",sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $pink;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
 
-$soc-orange : #ff6500;
-$soc-gray : #909090;
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
 
-//footer
-.footer-bg-color{
-    background-color: #d8d8d8;
-}
-
-.text-footer {
-    font-size: 0.9rem;
-  color: #6c757d !important;
-}
-
-a.text-footer:hover,
-a.text-footer:focus {
-  color: #545b62 !important;
-}
-$colors: (
-  "soc-orange" : $soc-orange,
-  "soc-gray" : $soc-gray 
-) !default;
-
-//Soc link
-//link orange
-$link : #fa5400 !important;;
-$hover : #fa6900 !important;;
-$forcus :  #fa6900 !important;;
-//link dark gray
-$link2 : #595959 !important;;
-$hover2 : #454545 !important;;
-$forcus2 :  #454545 !important;;
-
-.soc-link1 {
-  color:$link;
-}
-a.soc-link1{  
-  &:hover{
-    color:$hover;
-    text-decoration: none;
-  }
-  &:focus{
-    color:$forcus;
-    text-decoration: none;
-  }
-}
-
-.soc-link2 {
-  color:$link2;
-}
-a.soc-link2{  
-  &:hover{
-    color:$hover2;
-    text-decoration: none;
-  }
-  &:focus{
-    color:$forcus2;
-    text-decoration: none;
-  }
-}
-//Amazing effect
-.project {
-	width: 100%;
-	height: 200px;
-	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
-	background-size: cover;
-	background-position: center;
-	padding: 0 !important;
-	float:left;
-}
-
-.project-2 {
-	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
-}
-
-.project-3 {
-	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
-}
-
-.project-4 {
-	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
-}
-
-.project-hover {
-	width: 100%;
-	height: 100%;
-	color: #fff;
-	opacity: 0;
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-	background-color: rgba(186, 232, 2, 0.7);
-	padding: 10% 20px !important;
-}
-
-.project-hover hr {
-	height: 30px;
-	width: 0;
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-	background-color: rgba(255, 255, 255, 1);
-	border: 0;
-}
-
-.project-hover a {
-	color: rgba(255, 255, 255, 1);
-	padding: 2px 22px;
-	line-height: 40px;
-	border: 2px solid rgba(255, 255, 255, 1);
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
-}
-
-.project-hover a:hover {
-	border-color: rgba(51, 51, 51, 1);
-	color: rgba(51, 51, 51, 1);
-	background-color: #FFF;
-}
-
-.project:hover .project-hover {
-	opacity: 1;
-}
-
-.project:hover .project-hover hr {
-	width: 100%;
-	height: 5px;
-}
-$hover3:#fff;
-$forcus3:#fff;
-a.soc-link3{  
-  &:hover{
-    color:$hover3;
-    text-decoration: none;
-  }
-  &:focus{
-    color:$forcus3;
-    text-decoration: none;
-  }
-}
-
-
-//News
-.section-01{float: left; width: 100%;  border-top: 1px solid #d5d5d5; border-bottom: 1px solid #d5d5d5;background-color: #ffffff;}
-.section-01 .heading-large {border-bottom: 2px solid #fa6900; color: #fa6900; float: left; width: 100%; padding:0 0 6px; margin:0 0 18px; text-align: left;}
-.section-01 .heading-large::before, .section-01 .heading-large::after{background: transparent;}
-.section-01 .heading-small {border-bottom: 2px solid #fa6900; color: #fa6900; float: left; margin: 7px 0 0; width: 100%; padding-bottom: 10px; font-size: 18px }
-.section-01 .title-small {margin-bottom: 5px; font-size:17px }
-.section-01 .news-block{border-bottom: 1px dashed #000; padding-bottom: 30px; border: none;}
-.section-01 aside > .news-block{border-bottom: 1px dashed #000; padding-bottom: 19px;}
-.section-01 aside > .news-block:last-child{border-bottom: none; margin-bottom: 20px}
-.section-01 .card{border: none;}
-.section-01 .card-block{padding: 10px 0;}
-.section-01 .video-sec {float: left; margin-top: 30px; width: 100%;}
-.section-01 .video-block {float: left; margin-top: 20px; width: 100%;}
-
-.title-small {
-    color: #141517;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 20px;
-    margin: 6px 0 0;
-}
-
-.side-bar .nav-tabs{border-bottom:none;}
-.side-bar .nav-tabs .nav-link {color: #aeaeae; text-transform: uppercase; border: none;}
-.side-bar .nav-tabs .nav-link.active, .side-bar .nav-tabs .nav-link:hover{border-bottom:2px solid #fa6900;  text-transform: uppercase; color: #222}
-.sidebar-tabing .media{margin-top: 20px}
-.sidebar-tabing img{width: 120px;height: 100px;}
-.sidebar-tabing .title-small {line-height: 23px; margin-top: 5px; font-size: 18px}
-
-//info Socil Block
-.bg-soc-info {
-    background-color: #00BAB6;
-}
-
+// Import only what you need from Bulma
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/form.sass";
+@import "~bulma/sass/elements/title.sass";
+@import "~bulma/sass/components/navbar.sass";
+@import "~bulma/sass/layout/hero.sass";
+@import "~bulma/sass/layout/section.sass";
