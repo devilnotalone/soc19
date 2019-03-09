@@ -17,7 +17,7 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
-mix.combine(
+/*mix.combine(
     ["node_modules/jquery/dist/jquery.min.js"],
     "public/js/jquery.min.js"
 );
@@ -28,4 +28,4 @@ mix.combine(
 mix.combine(
     ["node_modules/bootstrap/dist/bootstrap.min.js"],
     "public/js/bootstrap.min.js"
-);
+);*/

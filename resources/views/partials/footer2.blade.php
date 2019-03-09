@@ -1,4 +1,4 @@
-<div class="w-100 p-3" style="background-color: #d8d8d8">
+{{-- <div class="w-100 p-3" style="background-color: #d8d8d8">
     <div class="container s1-font">
         <hr>
         <p class="text-center">
@@ -7,4 +7,4 @@
         </p>
         <br>
     </div>
-</div>
+</div> --}}

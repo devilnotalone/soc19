@@ -15,7 +15,7 @@
                             <img class="img-fluid" src="{{ Voyager::image($news1->thumbnail('cropped','image'))}}">
                             <div class="card-body">
                                 <div class="card-title">
-                                    <h2 class="title-small"><a class='soc-link2' href="{{ url("news/$news1->id")}}">{{ $news1->title }}</a></h2>
+                                    <h2 class="title-small"><a class='soc-link2' href="{{ url("news/$news1->id")}}">{{ str_limit($news1->title,50) }}</a></h2>
                                 </div>
                                 <p class="card-text soc-link2 text-justify">{{str_limit($news1->body,150)}}</p>
                             </div>
