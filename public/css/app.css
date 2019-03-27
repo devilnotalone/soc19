@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Kanit&subset=thai);@import url(https://fonts.googleapis.com/css?family=Kanit:300,400,700);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Kanit&subset=thai);@import url(https://fonts.googleapis.com/css?family=Sarabun&subset=thai);@charset "UTF-8";
 
 .materialize-red {
   background-color: #e51c23 !important;
@@ -2637,7 +2637,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: Sarabun, sans-serif;
 }
 
 ul:not(.browser-default) {
@@ -4722,7 +4722,7 @@ a {
 
 html {
   line-height: 1.5;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: Sarabun, sans-serif;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -6721,7 +6721,7 @@ textarea.materialize-textarea + label:after {
           transform-origin: 0 0;
 }
 
-.input-field > input[type]:-webkit-autofill:not(.browser-default) + label,
+.input-field > input[type]:-webkit-autofill:not(.browser-default):not([type=search]) + label,
 .input-field > input[type=date]:not(.browser-default) + label,
 .input-field > input[type=time]:not(.browser-default) + label {
   -webkit-transform: translateY(-14px) scale(0.8);

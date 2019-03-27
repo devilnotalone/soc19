@@ -1,4 +1,8 @@
 @charset "utf-8";
+//Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Sarabun&subset=thai');
 
-// Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Kanit:300,400,700');
+// Variables
+$font-stack : Sarabun,sans-serif;
+
+

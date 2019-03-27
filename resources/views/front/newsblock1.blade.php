@@ -3,159 +3,88 @@
         <div class="col l6 m12 s12">
             <div class="divider"></div>
             <div class="section">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="https://lorempixel.com/200/190/nature/6">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Card Title</span>
-                            <p>I am a very simple card. I am good at containing small bits of information.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="https://lorempixel.com/200/190/nature/6">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="divider"></div>
-            <div class="section">
-                <h5>Section 2</h5>
-                <p>Stuff</p>
-            </div>
-            <div class="divider"></div>
-            <div class="section">
-                <h5>Section 3</h5>
-                <p>Stuff</p>
-            </div>
-        </div>
-        <div class="col l6 m12 s12">22</div>
-    </div>
-</div>
-
-<div class="container">
-    <section class="section">
-        <div class="columns">
-            <div class="column is-half">
                 @foreach ($news_1 as $news1)
-                <div class="columns has-same-height is-gapless">
-                    <div class="column is-one-quarter">
-                        <!-- Picture -->
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-5by3">
-                                    <img src="{{ Voyager::image($news1->image)}}">
-                                </figure>
-                            </div>
-                        </div>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="{{ Voyager::image($news1->thumbnail('cropped','image'))}}">
                     </div>
-                    <div class="column">
-                        <div class="card">
-                            <article class="media">
-                                <div class="media-content">
-                                    <div class="content has-text-justified">
-                                        <p>
-                                            <strong><a href="{{ url("news/$news1->id")}}">
-                                                    {{ str_limit($news1->title,50) }}</a></strong><small>
-                                                31m</small>
-                                            <br>
-                                            {!! str_limit($news1->body,150) !!}
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
+                    <div class="card-stacked">
+                        @inject('getDate','App\Thaidate')
+                        <div class="card-content">
+                            <a href="{{ url("news/$news1->id")}}">
+                                {{ str_limit($news1->title,90) }}</a>
+                            <div class="divider"></div>
+                            <span class="grey-text" style="font-size: 0.8em"><i class="tiny material-icons">date_range</i>{{
+                                " ".$getDate->ThaiDate_Short(strtotime($news1->created_at)) }}</span>
                         </div>
                     </div>
                 </div>
                 @endforeach
-                <hr>
-            </div>
-            <div class="column">
-                11
             </div>
         </div>
-    </section>
-</div>
+        <div class="col l6 m12 s12">
+            <div class="section">
+                <div class="row">
+                    <div class="col l8 m8 s12 center">
+                        <a href="#!" class="btn waves-effect waves-light orange accent-3 grey-text text-darken-3">วิสัยทัศน์</a>
+                        <a class="waves-effect waves-light btn-large grey lighten-1 grey-text text-darken-3"><i class="material-icons right">cloud</i>เอกลักษณ์สำนักวิชา</a>
+                        <a class="waves-effect waves-light btn-large grey lighten-1 grey-text text-darken-3"><i class="material-icons left ">cloud</i>พันธกิจ</a>
+                        <a class="waves-effect waves-light btn orange accent-3 grey-text text-darken-3">วัตถุประสงค์</a>
+                        <a class="waves-effect waves-light btn orange accent-3 grey-text text-darken-3"><i class="material-icons right">cloud</i>เป้าหมาย</a>
+                        <a class="waves-effect waves-light btn-large grey lighten-1 grey-text text-darken-3"><i class="material-icons right">cloud</i>เอกลักษณ์บัณฑิต</a>
+                        <h5 class="orange-text text-accent-4">ผศ.ดร.เลหล้า ตรีเอกานุกูล<br>
+                            <span class="grey-text right" style="font-size:0.8em;">คณบดีสำนักวิชาสังคมศาสตร์</span></h5>
+                    </div>
 
-<div class="card">
-    <div class="card-image">
-        <figure class="image is-4by3">
-            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-        </figure>
-    </div>
-    <div class="card-content">
-        <div class="media">
-            <div class="media-left">
-                <figure class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                </figure>
-            </div>
-            <div class="media-content">
-                <p class="title is-4">John Smith</p>
-                <p class="subtitle is-6">@johnsmith</p>
-            </div>
-        </div>
+                    <div class="col l4 m4 s12 center-align">
+                        <img class="responsive-img" src="{{ Voyager::image(setting('site.dean_img'))}}">
+                    </div>
+                </div>
+                <div class="col s12 l12 m12">
+                    <div class="card-panel grey lighten-5 z-depth-1">
+                        <div class="row valign-wrapper">
+                            <div class="col s3">
+                                <img src="https://via.placeholder.com/150x150" alt="" class="responsive-img">
+                                <!-- notice the "circle" class -->
+                            </div>
+                            <div class="col s9">
+                                <span class="black-text">
+                                    This is a square image. Add the "circle" class to it to make it appear circular.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l6 m6">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <a href="#"><img src="https://via.placeholder.com/150x50"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l6 m6">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <a href="#"><img src="https://via.placeholder.com/150x50"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l6 m6">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <a href="#"><img src="https://via.placeholder.com/150x50"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l6 m6">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <a href="#"><img src="https://via.placeholder.com/150x50"></a>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-            <a href="#">#css</a> <a href="#">#responsive</a>
-            <br>
-            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            </div>
         </div>
     </div>
-</div>
-<div class="container-fluid mt-2 mb-2">
-    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 project wow animated animated4 fadeInLeft">
-        <a href="#" class="soc-link3">
-            <div class="project-hover">
-                <h2>TITLE</h2>
-                <hr />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet
-                    ullamcorper.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 project project-2 wow animated animated3 fadeInLeft">
-        <a href="#" class="soc-link3">
-            <div class="project-hover">
-                <h2>TITLE</h2>
-                <hr />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet
-                    ullamcorper.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 project project-3 wow animated animated2 fadeInLeft">
-        <a href="#" class="soc-link3">
-            <div class="project-hover">
-                <h2>TITLE</h2>
-                <hr />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet
-                    ullamcorper.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 project project-4 wow animated fadeInLeft">
-        <a href="#" class="soc-link3">
-            <div class="project-hover">
-                <h2>TITLE</h2>
-                <hr />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet
-                    ullamcorper.</p>
-            </div>
-        </a>
-    </div>
-    <div class="clearfix"></div>
 </div>
