@@ -1,54 +1,65 @@
 <div class='container'>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb bg-white shadow-sm">
-                <li class="breadcrumb-item"><a class='soc-link1' href="{{ url('/')}}">หน้าแรก</a></li>
-                    <li class="breadcrumb-item"><a class='soc-link1' href="#">ข่าว</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ $news_type->type}}</li>
-                </ol>
-            </nav>
-    <div class="row px-3">
-        <div class="col-md-8">
-        <div class="col-md-12">
+    <div class="section">
+        <nav class="deep-orange lighten-1">
+            <div class="nav-wrapper" style="margin-left: 3%;">
+                <div class="col s12">
+                    <a href="{{ url('/')}}" class="breadcrumb">หน้าหลัก</a>
+                    <a href="{{ url('list_news/1')}}" class="breadcrumb">ข่าว</a>
+                    <a href="#" class="breadcrumb">{{ $news_type->type }}</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col s12 m12 l8">
             @isset($news->image)
-                <img class="img-fluid mb-3" src="{{ Voyager::image($news->image)}}" alt="{{ $news->title }}">
+            <img class="materialboxed responsive-img" src="{{ Voyager::image($news->image)}}" alt="{{ $news->title }}">
             @endisset
-            <h4 class="heading-large mb-1">{{$news->title}}</h4>
+            <h4 class="grey-text text-darken-3">{{$news->title}}</h4>
             @inject('getDate','App\Thaidate')
-            <em class="soc-link1 small">{{ "ประกาศวันที่ ".$getDate->ThaiDate_Long(strtotime($news->created_at)) }}</em>
-            <div class="text-muted pt-3 text-justify">
+            <em class="grey-text">
+                <i
+                    class="tiny material-icons">date_range</i>{{ " ประกาศวันที่ ".$getDate->ThaiDate_Long(strtotime($news->created_at)) }}</em>
+            <p class="grey-text text-darken-3">
                 {!! $news->body !!}
-            </div>
+            </p>
             @isset($news->file)
-            <div class="bg-secondary shadow-sm mb-3">
-                <a class='text-white' href="{{ URL::asset($news->file) }}">
-                    <div class="p-3 text-center">
+            <div class="card-panel grey lighten-2 hoverable center">
+                    <h6 class="grey-text text-darken-4">
                         ดาวน์โหลดเอกสารที่เกี่ยวข้อง
-                    </div>
+                    </h6>
+                @foreach(json_decode($news->file) as $file)
+                <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}"
+                    target="_blank">
+                    {{ $file->original_name ?: '' }}
                 </a>
+                @endforeach
             </div>
             @endisset
         </div>
-        </div>
-        <aside class="col-md-4">
-            <div class="list-group mb-3">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-primary active">
-                ข่าว{{ $news_type->type}}ล่าสุด
-              </a>
-            @foreach ($news_all as $newsall)
-                    <a class="list-group-item list-group-item-action text-muted small" href="{{ url("news/$newsall->id")}}""><i class="fas fa-angle-right soc-link1 mr-1"></i>{{ str_limit($newsall->title,90) }}</a>            
-            @endforeach                
-            </div>    
+        <div class="col s12 m12 l4">
+            <ul class="collection with-header">
+                <li href="#" class="collection-header deep-orange lighten-1 grey-text text-darken-4 right-align">
+                    <h5>ข่าว{{ $news_type->type}}ล่าสุด</h5>
+                </li>
+                @foreach ($news_all as $newsall)
+                <li class="collection-item hoverable">
+                    <a class="truncate grey-text text-darken-3" href="{{ url("news/$newsall->id")}}""><i class="
+                        material-icons orange-text"
+                        style="font-size: 1em;">add</i>{{ str_limit(" ".$newsall->title,90) }}</a>
+                </li>
+                @endforeach
+            </ul>
+            <div class="card-panel">
+                <h5 class="right-align">ประเภทข่าว</h5>
+            </div>
 
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-light active">
-                ข่าวสารสังคมศาสตร์
-                </a>               
-                @foreach ($count_news as $count)
-                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center text-muted" href="{{ url("list_news/$count->news_type_id")}}"">{{ $count->type }}
-                        <span class="badge badge-primary badge-pill">{{ $count->count_type}}</span></a>            
-                @endforeach                
-            </div> 
-            
-        </aside>
+            <div class="collection">
+                @foreach ($news_type_all as $types)
+                <a href="{{ url("list_news/$types->id")}}" class="collection-item orange-text text-darken-4">{{-- <span
+                        class="badge">{{ $count->count_type}}</span> --}}{{ "ข่าว".$types->type }}</a>
+                @endforeach
+            </div>
+        </div>
     </div>
 </div>

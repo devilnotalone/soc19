@@ -17,6 +17,9 @@
 
 Route::get('/', 'HomeController@getIndex');
 Route::get('/news/{id}', 'NewsController@getNews');
+Route::get('/list_news/{id}', 'NewsController@listNews');
+Route::get('page/{slug}','PageController@getIndex');
+
 
 
 

@@ -1,5 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Sarabun&subset=thai);@charset "UTF-8";
 
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.pagination li.active {
+  font-size: 1.2rem;
+  -webkit-padding-start: 0.5rem;
+          padding-inline-start: 0.5rem;
+  -webkit-padding-end: 0.5rem;
+          padding-inline-end: 0.5rem;
+}
+
 .materialize-red {
   background-color: #e51c23 !important;
 }

@@ -6,3 +6,14 @@
 $font-stack : Sarabun,sans-serif;
 
 
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.pagination li.active{
+    font-size: 1.2rem;
+    padding-inline-start:0.5rem;
+    padding-inline-end: 0.5rem;
+
+}

@@ -5,12 +5,13 @@
          indicators : true,
          height : 150,
      });
+     $('.materialboxed').materialbox();
  });
  $('.carousel.carousel-slider').carousel({
      fullWidth: true
  });
 
-  autoplay();
+autoplay();
  function autoplay() {
      $('.carousel').carousel('next');
      setTimeout(autoplay, 10000);
