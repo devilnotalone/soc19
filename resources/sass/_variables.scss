@@ -1,19 +1,7 @@
 @charset "utf-8";
-//Google Fonts
-@import url('https://fonts.googleapis.com/css?family=Sarabun&subset=thai');
 
 // Variables
-$font-stack : Sarabun,sans-serif;
+// Converted Variables
 
-
-p {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.pagination li.active{
-    font-size: 1.2rem;
-    padding-inline-start:0.5rem;
-    padding-inline-end: 0.5rem;
-
-}
+$global-font-family: 'Sarabun',
+sans-serif;

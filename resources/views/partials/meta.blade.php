@@ -22,8 +22,13 @@
     <link rel="apple-touch-icon-precomposed" href="{{ url('/') }}/images/apple-touch-icon.png" />
 
     <!-- Styles -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/app.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/style.css">
 
     @if (setting('site.google_analytics_tracking_id'))
     <!-- Google Analytics (gtag.js) -->

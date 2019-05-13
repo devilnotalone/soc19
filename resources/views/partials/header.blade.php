@@ -1,22 +1,42 @@
-<nav class="white" role="navigation">
-    <div class="nav-wrapper">
-        <a href="{{ url('/') }}" class="brand-logo">
-            <img src="{{ Voyager::image(setting('site.logo'))}}" alt="สำนักวิชาสังคมศาสตร์ มหาวิทยาลัยราชภัฏเชียงราย">
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar transpatent>
+    <div class="container-fluid">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="{{ Voyager::image(setting('site.logo'))}}" alt="Social.CRRU">
         </a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons orange-text text-darken-4">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-            <li><a name="top" class="orange-text text-darken-4" href="{{ url('/') }}">หน้าหลัก</a></li>
-            <li><a class="orange-text text-darken-4" href="{{ url('page/about')}}">เกี่ยวกับเรา</a></li>
-            <li><a class="orange-text text-darken-4" href="mobile.html">สาขาวิชา</a></li>
-            <li><a class="orange-text text-darken-4" href="mobile.html">บุคลากร</a></li>
-            <li><a class="orange-text text-darken-4" href="mobile.html">งานวิจัย</a></li>
-        </ul>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <!-- Left -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link deep-orange-text" href="{{ url('/') }}">หน้าหลัก</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link deep-orange-text" href="{{ url('page/about')}}">เกี่ยวกับเรา</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link deep-orange-text" href="#">สาขาวิชา</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link deep-orange-text" href="#">บุคลากร</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link deep-orange-text" href="#">งานวิจัย</a>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </nav>
+<!-- Navbar -->
 
-<ul class="sidenav" id="mobile-demo">
-    <li><a href="{{ url('/') }}">หน้าหลัก</a></li>
-    <li><a href="{{ url('page/about')}}">เกี่ยวกับเรา</a></li>
-    <li><a href="mobile.html">สาขาวิชา</a></li>
-    <li><a href="mobile.html">บุคลากร</a></li>
-</ul>

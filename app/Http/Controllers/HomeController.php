@@ -13,13 +13,13 @@ class HomeController extends Controller
         $data['slides'] = Slide::all();
         $data['count_slide'] = Slide::count();
 
-        $data['news_1'] = News::where('news_type_id',1)
+        $data['news_head_1'] = News::where('news_type_id',1)
             ->orderBy('created_at','desc')
-            ->take(4)
+            ->take(3)
             ->get();
         $data['news_1_1'] = News::where('news_type_id', 1)
             ->orderBy('created_at', 'desc')
-            ->skip(4)
+            ->skip(3)
             ->take(10)
             ->get();
         $data['news_2'] = News::where('news_type_id', 2)

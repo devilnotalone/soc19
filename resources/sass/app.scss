@@ -1,10 +1,9 @@
 
 // Fonts
-
+@import url('https://fonts.googleapis.com/css?family=Sarabun');
 // Variables
-@import 'variables';
+/* @import 'variables'; */
 
 // Meterialize-css
-@import "./node_modules/materialize-css/sass/materialize";
-
-
+/* @import "./node_modules/tachyons-sass/tachyons.scss/"; */
+@import "./node_modules/mdbootstrap/scss/mdb";
