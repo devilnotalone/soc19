@@ -26,7 +26,7 @@ class NewsController extends Controller
         $data['news_type'] = NewsType::where('id', $id)->firstOrFail();
         $data['news_of_type'] = News::where('news_type_id', $id)
             ->orderBy('created_at', 'desc')
-            ->paginate(8);
+            ->paginate(5);
         $data['news_type_all'] = NewsType::all();
 
         return view('front.listnews', $data);

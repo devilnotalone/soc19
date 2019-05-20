@@ -28,7 +28,6 @@
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/bootstrap.min.css">
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/app.css">
-    <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/style.css">
 
     @if (setting('site.google_analytics_tracking_id'))
     <!-- Google Analytics (gtag.js) -->

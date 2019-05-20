@@ -6,5 +6,10 @@
 <script type="text/javascript" src="{{ url('/') }}/js/popper.min.js"></script>
 <script type="text/javascript" src="{{ url('/') }}/js/mdb.min.js"></script>
 <script type="text/javascript" src="{{ url('/') }}/js/app.js"></script>
+<script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+</script>
+
 </body>
 </html>
