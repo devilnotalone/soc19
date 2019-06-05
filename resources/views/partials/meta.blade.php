@@ -23,10 +23,8 @@
 
     <!-- Styles -->
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="{{ url('/') }}/css/all.css">
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/bootstrap.min.css">
-    <!-- Material Design Bootstrap -->
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/app.css">
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/style.css">
 
@@ -57,43 +55,8 @@
         function onSubmit(token) {
             document.getElementById(window.formId).submit();
         }
-
     </script>
     @endif
-    <style type="text/css">
-        html,
-        body,
-        header,
-        .carousel {
-            height: 60vh;
-        }
-
-        @media (max-width: 740px) {
-
-            html,
-            body,
-            header,
-            .carousel {
-                height: 100vh;
-            }
-        }
-
-        @media (min-width: 800px) and (max-width: 850px) {
-
-            html,
-            body,
-            header,
-            .carousel {
-                height: 100vh;
-            }
-        }
-
-        @media (min-width: 800px) and (max-width: 850px) {
-            .navbar:not(.top-nav-collapse) {
-                background: #929FBA !important;
-            }
-        }
-    </style>
 </head>
 
 <body>

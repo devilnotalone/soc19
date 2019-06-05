@@ -3,8 +3,8 @@
         <div class="col-md-8">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="deep-orange-text" href="{{ url('/')}}">หน้าหลัก</a></li>
-                    <li class="breadcrumb-item"><a class="deep-orange-text" href="{{ url('list_news/1')}}">ข่าว</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/')}}">หน้าหลัก</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('list_news/1')}}">ข่าว</a></li>
                     <li class="breadcrumb-item active">{{ $news_type->type }}</li>
                 </ol>
             </nav>
@@ -21,16 +21,16 @@
                     <!-- Title -->
                     <h4 class="card-title"><a>{{$news->title}}</a></h4>
                     @inject('getDate','App\Thaidate')
-                    <em class="grey-text">
+                    <em class="text-muted">
                         <i
                             class="far fa-calendar-alt"></i>{{ " วันที่ ".$getDate->ThaiDate_Long(strtotime($news->created_at)) }}</em>
                     <!-- Text -->
-                    <p class="card-text text-justify">{!! $news->body !!}</p>
+                    <p class="card-text">{!! $news->body !!}</p>
                     <!-- Button -->
                     <hr>
                     @isset($news->file)
                     @foreach(json_decode($news->file) as $file)
-                    <a class="btn btn-info btn-lg btn-block"
+                    <a class="btn btn-info btn-block"
                         href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}"
                         target="_blank">
                         {{ $file->original_name ?: '' }}
@@ -43,26 +43,26 @@
             <!-- Card -->
         </div>
         <div class="col-md-4">
-            <div class="card">
+            <div class="card  bg-primary">
                 <div class="card-header">
-                    <h5 class="text-right deep-orange-text">ข่าว{{ $news_type->type}}ล่าสุด</h5>
+                    <h5 class="text-right text-white">ข่าว{{ $news_type->type}}ล่าสุด</h5>
                 </div>
                 <div class="list-group list-group-flush">
                     @foreach ($news_all as $newsall)
                     <a href="{{ url("news/$newsall->id")}}"
                         class="list-group-item list-group-item-action"><i
-                            class="fas fa-angle-right"></i>{{ str_limit(" ".$newsall->title,90) }}</a>
+                            class="fas fa-angle-right text-primary"></i>{{ str_limit(" ".$newsall->title,90) }}</a>
                     @endforeach
                 </div>
             </div>
-            <div class="card my-4">
-                <div class="card-header gradient-card-header peach-gradient">
+            <div class="card bg-info my-4">
+                <div class="card-header">
                     <h5 class="text-right">ประเภทข่าว</h5>
                 </div>
                 <div class="list-group list-group-flush">
                     @foreach ($news_type_all as $types)
                     <a href="{{ url("list_news/$types->id")}}" class="list-group-item list-group-item-action"><i
-                            class="fas fa-angle-right deep-orange-text"></i>{{ " ข่าว".$types->type }}</a>
+                            class="fas fa-angle-right text-info"></i>{{ " ข่าว".$types->type }}</a>
                     @endforeach
                 </div>
             </div>

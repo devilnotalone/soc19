@@ -1,19 +1,20 @@
-<div class="row grey lighten-2 py-4">
-    <div class="col-md-8">
-        <div class="card mx-3 peach-gradient">
-            <div class="card-body text-center">
-                <h3 class="h3-responsive">บริการหลักสูตร</h3>
+<div class="container-fluid parallax1">
+<div class="row p-3">
+    <div class="col-md-8 mt-3">
+        <div class="card bg-light">
+            <div class="card-body text-center shadow-sm">
+                <h3 class="text-primary">บริการหลักสูตร</h3>
             </div>
         </div>
-        <div class="row mx-3 py-2">
+        <div class="row py-2">
             <div class="col-md-4">
                 <!-- Card Dark -->
-                <div class="card mx-1 mt-3">
+                <div class="card mt-3">
 
                     <!-- Card image -->
                     <div class="view overlay">
                         <img class="card-img-top"
-                            src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2821%29.jpg"
+                            src="{{ Voyager::image('image_link/course_1_1.png')}}"
                             alt="Card image cap">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -26,11 +27,11 @@
                         <h5 class="card-title h5-responsive">หลักสูตรปริญญาตรี</h5>
                         <!-- Text -->
                         <ul>
-                            <li>การพัฒนาสังคม</li>
-                            <li>สังคมวิทยาและมานุษยวิทยา</li>
-                            <li>คหกรรมศาสตร์ประยุกต์</li>
-                            <li>ระบบสารสนเทศภูมิศาสตร์</li>
-                            <li>จิตวิทยาสังคม</li>
+                            <li><a class="white-text" href="{{ url("course/1/1")}}">การพัฒนาสังคม</a></li>
+                            <li><a class="white-text" href="{{ url("course/1/2")}}">สังคมวิทยาและมานุษยวิทยา</a></li>
+                            <li><a class="white-text" href="{{ url("course/1/3")}}">คหกรรมศาสตร์ประยุกต์</a></li>
+                            <li><a class="white-text" href="{{ url("course/1/4")}}">ระบบสารสนเทศภูมิศาสตร์</a></li>
+                            <li><a class="white-text" href="{{ url("course/1/5")}}">จิตวิทยาสังคม</a></li>
                         </ul>
                     </div>
 
@@ -39,12 +40,12 @@
             </div>
             <div class="col-md-4">
                 <!-- Card Dark -->
-                <div class="card mx-1 mt-3">
+                <div class="card mt-3">
 
                     <!-- Card image -->
                     <div class="view overlay">
                         <img class="card-img-top"
-                            src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2821%29.jpg"
+                            src="{{ Voyager::image('image_link/course_2.png')}}"
                             alt="Card image cap">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -57,7 +58,7 @@
                         <h5 class="card-title h5-responsive">หลักสูตรปริญญาโท</h5>
                         <!-- Text -->
                         <ul>
-                            <li>สังคมศาสตร์เพื่อการพัฒนา</li>
+                            <li><a class="white-text" href="{{ url("course/2/1")}}">สังคมศาสตร์เพื่อการพัฒนา</a></li>
                         </ul>
                     </div>
 
@@ -66,12 +67,12 @@
             </div>
             <div class="col-md-4">
                 <!-- Card Dark -->
-                <div class="card mx-1 mt-3">
+                <div class="card mt-3">
 
                     <!-- Card image -->
                     <div class="view overlay">
                         <img class="card-img-top"
-                            src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2821%29.jpg"
+                            src="{{ Voyager::image('image_link/course_3.png')}}"
                             alt="Card image cap">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -84,7 +85,7 @@
                         <h5 class="card-title h5-responsive">หลักสูตรปริญญาเอก</h5>
                         <!-- Text -->
                         <ul>
-                            <li>ยุทธศาสตร์การพัฒนาภูมิภาค</li>
+                            <li><a class="white-text" href="{{ url("course/3/1")}}">ยุทธศาสตร์การพัฒนาภูมิภาค</a></li>
                         </ul>
                     </div>
 
@@ -93,12 +94,11 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="video-container">
-            <iframe width="100%" src="https://www.youtube-nocookie.com/embed/UUXUoRlU8z4" frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+    <div class="col-md-4 mt-3">
+        <div class="embed-responsive embed-responsive-16by9">
+           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/AF7mZu6c72o"  allowfullscreen></iframe>
         </div>
     </div>
 
+</div>
 </div>

@@ -24,10 +24,13 @@
     <!-- Styles -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ url('/') }}/css/all.css">
-    <!-- Bootstrap core CSS -->
+ {{--    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/bootstrap.min.css">
     <!-- Material Design Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/app.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/app.css"> --}}
+    <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/orgchart.css">
+
+
 
     @if (setting('site.google_analytics_tracking_id'))
     <!-- Google Analytics (gtag.js) -->

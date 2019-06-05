@@ -1,24 +1,14 @@
-@extends('layouts.page')
+@extends('layouts.chart')
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row mt-4">
-        <div class="col-md-12 col-sm-12 mb-3 col-lg-9">
-            <!-- Jumbotron -->
-            <div class="jumbotron bg-light">
-                <!-- Title -->
-                <h4 class="card-title h4 pb-2 text-primary text-center"><strong>{{ $page->title}}</strong></h4>
-
-                <!-- Card image -->
-                <div class="view overlay my-4">
-                    @isset($page->image)
-                        <img class="img-fluid" src="{{ Voyager::image($page->image)}}">
-                    @endisset
-                </div>
-                <p class="card-text">{!! $page->body !!}</p>
-            </div>
-            <!-- Jumbotron -->
-        </div>
-        <div class="col-md-12 col-sm-12 col-lg-3">
+        <div class="col-md-12 col-sm-12 mb-3 col-lg-12">
+            <!-- Chart -->
+             <div style="width: 960px; height: 720px; margin: 10px; position: relative;"><iframe allowfullscreen
+                     frameborder="0" style="width:960px; height:720px"
+                     src="https://www.lucidchart.com/documents/embeddedchart/a0c9867b-7e99-4a34-85c7-2a433268c7ee"
+                     id="7uMmWlwfg~nE"></iframe></div>
+       {{--  <div class="col-md-12 col-sm-12 col-lg-2">
             <div class="card bg-primary mb-3">
                 <div class="card-header text-white">
                     <h5 class="text-right">เกี่ยวกับสำนักวิชา</h5>
@@ -40,11 +30,11 @@
                             class="fas fa-angle-right text-primary"></i>{{" "}}อัตลักษณ์บัณฑิต</a>
                     <a href="{{ url('page/plan')}}" class="list-group-item list-group-item-action"><i
                             class="fas fa-angle-right text-primary"></i>{{" "}}แผนยุทธศาสตร์ 4 ปี</a>
-                    <a href="https://app.orgweaver.com/pub/UXYCNL" target="_blank" class="list-group-item list-group-item-action"><i
+                    <a href="{{ url('page/about')}}" class="list-group-item list-group-item-action"><i
                             class="fas fa-angle-right text-primary"></i>{{" "}}โครงสร้างการบริหารงาน</a>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 @endsection

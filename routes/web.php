@@ -19,9 +19,11 @@ Route::get('/', 'HomeController@getIndex');
 Route::get('/news/{id}', 'NewsController@getNews');
 Route::get('/list_news/{id}', 'NewsController@listNews');
 Route::get('page/{slug}','PageController@getIndex');
+Route::get('/chart', 'PageController@getChart');
 
-
-
+Route::get('/course/{id}/{i}', 'PageController@getCourse');
+Route::get('/ta_download/{id}', 'DownloadController@ta_download');
+Route::get('/st_download/{id}', 'DownloadController@st_download');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

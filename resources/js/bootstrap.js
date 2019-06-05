@@ -10,9 +10,8 @@ window._ = require('lodash');
 
 try {
     window.$ = window.jQuery = require('jquery');
-
-    //require('bootstrap');
-    /* require('materialize-css'); */
+    window.Popper = Popper;
+    require('bootstrap');
 } catch (e) {}
 
 /**
