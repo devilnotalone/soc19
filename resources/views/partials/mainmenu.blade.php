@@ -12,7 +12,7 @@
          <a class="nav-link" href="{{ url('course/1/1')}}">หลักสูตร</a>
      </li>
      <li class="nav-item">
-         <a class="nav-link" href="#">บุคลากร</a>
+         <a class="nav-link" href="{{ url('administrator')}}">บุคลากร</a>
      </li>
      <li class="nav-item">
          <a class="nav-link" href="http://socresearch.crru.ac.th" target="_blank">งานวิจัย</a>

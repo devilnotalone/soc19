@@ -25,6 +25,16 @@ Route::get('/course/{id}/{i}', 'PageController@getCourse');
 Route::get('/ta_download/{id}', 'DownloadController@ta_download');
 Route::get('/st_download/{id}', 'DownloadController@st_download');
 
+/* Personal */
+Route::get('/administrator', 'PageController@getAdministrator');
+
+Route::get('/personal/{id}', 'PageController@getPersonal');
+
+Route::get('/staff', 'PageController@getStaff');
+
+
+
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
