@@ -116,6 +116,14 @@ class PageController extends Controller
             ->select('personals.*', 'academics.short_name as academic_name')
             ->first();
 
+
+        $data['getPs4'] = DB::table('personals')
+            ->where([['major_position_id', '=', 3],
+                ['major_id', '=', $id]])
+            ->join('academics', 'personals.academic_id', '=', 'academics.id')
+            ->select('personals.*', 'academics.short_name as academic_name')
+            ->first();
+
         return view('page.personal', $data);
     }
 
@@ -196,5 +204,11 @@ class PageController extends Controller
             ->get();
 
         return view('page.staff', $data);
+    }
+
+    public function getPromote($slug)
+    {
+        $data['page'] = Page::where('slug', $slug)->first();
+        return view('page.promote', $data);
     }
 }

@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function getIndex()
     {
         $data['slides'] = DB::table('slides')
-            ->orderBy('created_at','desc')
+            ->orderBy('created_at','asc')
             ->take(4)
             ->get();
         $data['count_slide'] = Slide::count();
@@ -25,20 +25,26 @@ class HomeController extends Controller
         $data['news_1_1'] = News::where('news_type_id', 1)
             ->orderBy('created_at', 'desc')
             ->skip(3)
-            ->take(10)
+            ->take(5)
             ->get();
         $data['news_2'] = News::where('news_type_id', 2)
             ->orderBy('created_at', 'desc')
-            ->take(10)
+            ->take(5)
             ->get();
         $data['news_3'] = News::where('news_type_id', 3)
             ->orderBy('created_at', 'desc')
-            ->take(10)
+            ->take(5)
             ->get();
         $data['news_4'] = News::where('news_type_id', 4)
             ->orderBy('created_at', 'desc')
+            ->take(5)
+            ->get();
+
+        $data['album'] = DB::table('galleries')
+            ->orderBy('created_at', 'desc')
             ->take(10)
             ->get();
+
         return view('front.index', $data);
 
     }

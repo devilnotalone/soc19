@@ -1,5 +1,5 @@
   <div class="bd-example">
-      <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
               <?php $i=0; ?>
               @foreach( $slides as $slide)
@@ -12,10 +12,17 @@
           <div class="carousel-inner">
               @foreach( $slides as $slide)
               <div class="carousel-item @if($loop->first) active @endif">
-                <a href="{{ $slide->link }}" target="_blank">
                   <img src="{{ Voyager::image($slide->image)}}" width="100%" height="100%"
                       class="d-block w-100 bd-placeholder-img">
-                 </a>
+                  <div class="carousel-caption text-right text-dark">
+                      <h1>{{ $slide->title }}</h1>
+                      <h2>{{ $slide->headline }}</h2>
+                      <h4>{{ $slide->detail }}</h4>
+                      <p></p><a target="_blank" role="button" href="{{ $slide->link }}"
+                          class="btn btn-lg btn-primary">ดูรายละเอียดเพิ่มเติม
+                          <i class="fas fa-graduation-cap ml-2"></i>
+                      </a></p>
+                  </div>
               </div>
               @endforeach
           </div>

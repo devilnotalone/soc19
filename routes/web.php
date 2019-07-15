@@ -19,6 +19,7 @@ Route::get('/', 'HomeController@getIndex');
 Route::get('/news/{id}', 'NewsController@getNews');
 Route::get('/list_news/{id}', 'NewsController@listNews');
 Route::get('page/{slug}','PageController@getIndex');
+Route::get('promote/{slug}', 'PageController@getPromote');
 Route::get('/chart', 'PageController@getChart');
 
 Route::get('/course/{id}/{i}', 'PageController@getCourse');
@@ -27,10 +28,15 @@ Route::get('/st_download/{id}', 'DownloadController@st_download');
 
 /* Personal */
 Route::get('/administrator', 'PageController@getAdministrator');
-
 Route::get('/personal/{id}', 'PageController@getPersonal');
-
 Route::get('/staff', 'PageController@getStaff');
+
+/* Galleries */
+Route::get('/album', 'GalleriesController@getAlbum');
+Route::get('/gallery/{id}', 'GalleriesController@getGallery');
+
+
+
 
 
 

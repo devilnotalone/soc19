@@ -8,4 +8,5 @@ use TCG\Voyager\Traits\Resizable;
 class Gallery extends Model
 {
     use Resizable;
+
 }

@@ -1,38 +1,26 @@
-<!-- Info block 3 -->
-<section class="info-section bg-soc-info py-0">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 col-lg-8 mt-md-0 pl-5 pt-4">
-                <div class="head-box mb-5 pl-5 mt-2">
-                    <h4 class="text-white">เกี่ยวกับ</h4>
-                    <h2 class="text-white text-underline-rb-white">สำนักวิชาสังคมศาสตร์</h2>
+<div class="section">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-8 text-center text-white bg-secondary">
+            <div class="row">
+                @foreach ($album as $al)
+                <div class="col-xs-6 col-sm-3 px-0 hover-blur">
+                    <a href="{{ url("gallery/$al->id")}}" title="">
+                        @php $image = json_decode($al->gallery); @endphp
+                        @if(isset($image[0]))
+                        <img src="{{Voyager::image($image[0])}}" class="img-fluid">
+                        @endif
+                        {{--  <img src="http://placeimg.com/260/260/nature/3/" alt="" /> --}}
+                        <h6><span class="text-white">{{ $al->title }}</span></h6>
+                    </a>
                 </div>
-                <ul class="pl-5">
-                    <li>
-                        <i class="fa fa-laptop box-round-outline" aria-hidden="true"></i>
-                        <span class="list-content">
-                    		<strong>Responsive Design</strong>
-                    		<br>Eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    	</span>
-                    </li>
-                    <li>
-                        <i class="fa fa-cloud-upload box-round-outline" aria-hidden="true"></i>
-                        <span class="list-content">
-                    		<strong>Cloud Storage</strong>
-                    		<br>Eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    	</span>
-                    </li>
-                    <li>
-                        <i class="fa fa-diamond box-round-outline" aria-hidden="true"></i>
-                        <span class="list-content">
-                    		<strong>Premium Features</strong>
-                    		<br>Eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    	</span>
-                    </li>
-                </ul>
+                @endforeach
             </div>
-            <div class="col-md-4 p-0 m-0">
-                <img src="https://grafreez.com/wp-content/temp_demos/suffi/img/intro-bg.jpg" class="img-fluid">
-            </div>
+            {{-- <hr class="divider my-1">
+            <h4 class="display-5">Galleries of Social Sciences</h4>
+            <p class="lead">ประมวลภาพกิจกรรมสำนักวิชาสังคมศาสตร์</p> --}}
         </div>
-</section>
+        <div class="col-md-12 col-sm-12 col-lg-4 bg-white">
+            111
+        </div>
+    </div>
+</div>

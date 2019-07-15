@@ -25,8 +25,12 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ url('/') }}/css/all.css">
     <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/app.css">
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/css/style.css">
+
+
 
     @if (setting('site.google_analytics_tracking_id'))
     <!-- Google Analytics (gtag.js) -->

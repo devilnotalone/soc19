@@ -67,6 +67,25 @@
                             </div>
                         </div>
                     </div>
+                   @isset($getPs4->id)
+                    <hr class="divider m-2 bg-primary">
+                    <div class="col-sm-12 col-md-4 col-lg-4 p-2">
+                        <div class="card border-0 shadow-sm">
+                            @isset($getPs4->picture)
+                            <img src="{{ Voyager::image($getPs4->picture)}}" class="card-img-top" alt="...">
+                            @endisset
+                            @empty($getPs4->picture)
+                            <i class="fas fa-user fa-10x text-center text-muted"></i>
+                            @endempty
+                            <div class="card-body text-center">
+                                <h6 class="card-title mb-0 text-black">
+                                    {{ $getPs4->academic_name.$getPs4->name." ".$getPs4->surname}}
+                                </h6>
+                                <div class="card-text text-primary">ที่ปรึกษาสาขาวิชา</div>
+                            </div>
+                        </div>
+                    </div>
+                    @endisset
                 </div>
             </div>
         </div>
