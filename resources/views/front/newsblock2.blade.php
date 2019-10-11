@@ -96,7 +96,12 @@
     </div>
     <div class="col-md-4 mt-3">
         <div class="embed-responsive embed-responsive-16by9">
-           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/AF7mZu6c72o"  allowfullscreen></iframe>
+           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/G76r00avE2Y"
+               allowfullscreen></iframe>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9 mt-2">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/AF7mZu6c72o"
+                allowfullscreen></iframe>
         </div>
     </div>
 

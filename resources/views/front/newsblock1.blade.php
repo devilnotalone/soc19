@@ -135,7 +135,8 @@
         <div class="col-md-4 p-3">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ Voyager::image(setting('site.dean_img'))}}" class="img-fluid" alt="Responsive image">
+                    <a href="mailto:lelatree@gmail.com" target="_blank"><img src="{{ Voyager::image(setting('site.dean_img'))}}"
+                            class="img-fluid" alt="Responsive image"></a>
                 </div>
                 <div class="col-md-6">
                     <a role="button" href="{{ url('page/philosophy-vision')}}" aria-pressed="true"
@@ -171,6 +172,13 @@
                 <div class="col-md-6 col-sm-12">
                     <a href="{{ url("ta_download/1")}}"><img src="{{ Voyager::image('image_link/download.png')}}"
                             class="img-fluid shadow-sm m-2"></a>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                        src="https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FBangkok&amp;src=Y3JydS5hYy50aF8xM2cwdmxhc2QwN2kzZ2Z0NnQ5bGExOGxyb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y3JydS5hYy50aF81Zmp2cjd0bjRlZDVxMnNrbW1qOW9rdWw5NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=dGgudGgjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23039BE5&amp;color=%23F4511E&amp;color=%23B39DDB&amp;showTz=0&amp;showPrint=0&amp;showTitle=0"
+                        style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
                 </div>
             </div>
         </div>
