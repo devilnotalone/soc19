@@ -22,6 +22,6 @@
         <a href="{{ url('/personal/4')}}" class="list-group-item list-group-item-action"><i
                 class="fas fa-angle-right text-primary"></i>{{" "}}สาขาวิชาระบบสารสนเทศภูมิศาสตร์</a>
         <a href="{{ url('/staff')}}" class="list-group-item list-group-item-action"><i
-                class="fas fa-angle-right text-primary"></i>{{" "}}บุคลากรประจำสำนักวิชา</a>
+                class="fas fa-angle-right text-primary"></i>{{" "}}บุคลากรสายสนับสนุนประจำสำนักวิชา (ทุกจุด)</a>
     </div>
 </div>

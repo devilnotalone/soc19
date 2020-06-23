@@ -173,6 +173,13 @@
                     <a href="{{ url("ta_download/1")}}"><img src="{{ Voyager::image('image_link/download.png')}}"
                             class="img-fluid shadow-sm m-2"></a>
                 </div>
+                <div class="col-md-6 col-sm-12">
+                    <a href="{{ Voyager::image('image_link/teach2020.jpg')}}" target="_blank"><img
+                            src="{{ Voyager::image('image_link/teach.png')}}" class="img-fluid shadow-sm m-2"></a>
+                </div><div class="col-md-6 col-sm-12">
+                    <a href="{{ Voyager::image('image_link/freshy2020.jpg')}}" target="_blank"><img
+                            src="{{ Voyager::image('image_link/student.png')}}" class="img-fluid shadow-sm m-2"></a>
+                </div>
             </div>
             <div class="row m-2">
                 <div class="embed-responsive embed-responsive-16by9">
