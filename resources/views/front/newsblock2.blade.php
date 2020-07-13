@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="row py-2">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <!-- Card Dark -->
                 <div class="card mt-3">
 
@@ -28,17 +28,17 @@
                         <!-- Text -->
                         <ul>
                             <li><a class="white-text" href="{{ url("course/1/1")}}">การพัฒนาสังคม</a></li>
-                            <li><a class="white-text" href="{{ url("course/1/2")}}">สังคมวิทยาและมานุษยวิทยา</a></li>
+                            <li><a class="white-text" href="{{ url("course/1/5")}}">จิตวิทยาสังคม</a></li>
                             <li><a class="white-text" href="{{ url("course/1/3")}}">คหกรรมศาสตร์ประยุกต์</a></li>
                             <li><a class="white-text" href="{{ url("course/1/4")}}">ระบบสารสนเทศภูมิศาสตร์</a></li>
-                            <li><a class="white-text" href="{{ url("course/1/5")}}">จิตวิทยาสังคม</a></li>
+                            <li><a class="white-text" href="{{ url("course/1/2")}}">สังคมวิทยาและมานุษยวิทยา</a></li>
                         </ul>
                     </div>
 
                 </div>
                 <!-- Card Dark -->
             </div>
-            <div class="col-md-4">
+            {{-- <div class="col-md-4">
                 <!-- Card Dark -->
                 <div class="card mt-3">
 
@@ -64,8 +64,8 @@
 
                 </div>
                 <!-- Card Dark -->
-            </div>
-            <div class="col-md-4">
+            </div> --}}
+            <div class="col-md-6">
                 <!-- Card Dark -->
                 <div class="card mt-3">
 

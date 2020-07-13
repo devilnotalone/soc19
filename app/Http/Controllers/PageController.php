@@ -81,7 +81,22 @@ class PageController extends Controller
             ->first();
 
         $data['getAd8'] = DB::table('personals')
-            ->where('major_position_id', 1)
+        ->where([
+            ['major_position_id', 1],
+            ['major_id','<>',9]
+        ])
+            ->join('major_positions', 'personals.major_position_id', '=', 'major_positions.id')
+            ->join('academics', 'personals.academic_id', '=', 'academics.id')
+            ->join('majors', 'personals.major_id', '=', 'majors.id')
+            ->select('personals.*', 'major_positions.name as position_name', 'academics.short_name as academic_name', 'majors.short_name as major_name')
+            ->get();
+
+        $data['getAd9'] = DB::table('personals')
+            ->where([
+                ['major_position_id', 1],
+                ['major_id','<>',9]
+            ])
+
             ->join('major_positions', 'personals.major_position_id', '=', 'major_positions.id')
             ->join('academics', 'personals.academic_id', '=', 'academics.id')
             ->join('majors', 'personals.major_id', '=', 'majors.id')
@@ -94,32 +109,47 @@ class PageController extends Controller
     public function getPersonal($id)
     {
         $data['getPs1'] = DB::table('personals')
-            ->where([['major_position_id', '=', 1],
-                ['major_id', '=', $id]])
+            ->where([
+                ['major_position_id', '=', 1],
+                ['major_id', '=', $id]
+            ])
             ->join('major_positions', 'personals.major_position_id', '=', 'major_positions.id')
             ->join('academics', 'personals.academic_id', '=', 'academics.id')
             ->join('majors', 'personals.major_id', '=', 'majors.id')
             ->select('personals.*', 'major_positions.name as position_name', 'academics.short_name as academic_name', 'majors.name as major_name')
             ->first();
 
-        $data['getPs2'] = DB::table('personals')
+       /*  $data['getPs2'] = DB::table('personals')
             ->whereNull('major_position_id')
             ->where('major_id', $id)
+            ->join('academics', 'personals.academic_id', '=', 'academics.id')
+            ->select('personals.*', 'academics.short_name as academic_name')
+            ->get(); */
+
+        $data['getPs2'] = DB::table('personals')
+            ->where([
+                ['major_position_id', '=', 4],
+                ['major_id', '=', $id]
+            ])
             ->join('academics', 'personals.academic_id', '=', 'academics.id')
             ->select('personals.*', 'academics.short_name as academic_name')
             ->get();
 
         $data['getPs3'] = DB::table('personals')
-            ->where([['major_position_id', '=', 2],
-                ['major_id', '=', $id]])
+            ->where([
+                ['major_position_id', '=', 2],
+                ['major_id', '=', $id]
+            ])
             ->join('academics', 'personals.academic_id', '=', 'academics.id')
             ->select('personals.*', 'academics.short_name as academic_name')
             ->first();
 
 
         $data['getPs4'] = DB::table('personals')
-            ->where([['major_position_id', '=', 3],
-                ['major_id', '=', $id]])
+            ->where([
+                ['major_position_id', '=', 3],
+                ['major_id', '=', $id]
+            ])
             ->join('academics', 'personals.academic_id', '=', 'academics.id')
             ->select('personals.*', 'academics.short_name as academic_name')
             ->first();
@@ -140,7 +170,8 @@ class PageController extends Controller
         $data['getSt1'] = DB::table('personals')
             ->where([
                 ['position_status_id', '=', '2'],
-                ['personals.id', '=', '50']])
+                ['personals.id', '=', '50']
+            ])
             ->join('prefix_names', 'personals.prefix_name_id', '=', 'prefix_names.id')
             ->join('positions', 'personals.position_id', '=', 'positions.id')
             ->join('personals_departs', 'personals_departs.personal_id', '=', 'personals.id')
@@ -152,7 +183,8 @@ class PageController extends Controller
             ->where([
                 ['position_status_id', '=', '2'],
                 ['personals.id', '<>', '50'],
-                ['personals_departs.department_id', '=', '1']])
+                ['personals_departs.department_id', '=', '1']
+            ])
             ->join('prefix_names', 'personals.prefix_name_id', '=', 'prefix_names.id')
             ->join('positions', 'personals.position_id', '=', 'positions.id')
             ->join('personals_departs', 'personals_departs.personal_id', '=', 'personals.id')
@@ -163,7 +195,8 @@ class PageController extends Controller
         $data['getSt3'] = DB::table('personals')
             ->where([
                 ['position_status_id', '=', '2'],
-                ['personals_departs.department_id', '=', '2']])
+                ['personals_departs.department_id', '=', '2']
+            ])
             ->join('prefix_names', 'personals.prefix_name_id', '=', 'prefix_names.id')
             ->join('positions', 'personals.position_id', '=', 'positions.id')
             ->join('personals_departs', 'personals_departs.personal_id', '=', 'personals.id')
@@ -174,7 +207,8 @@ class PageController extends Controller
         $data['getSt4'] = DB::table('personals')
             ->where([
                 ['position_status_id', '=', '2'],
-                ['personals_departs.department_id', '=', '3']])
+                ['personals_departs.department_id', '=', '3']
+            ])
             ->join('prefix_names', 'personals.prefix_name_id', '=', 'prefix_names.id')
             ->join('positions', 'personals.position_id', '=', 'positions.id')
             ->join('personals_departs', 'personals_departs.personal_id', '=', 'personals.id')
@@ -185,7 +219,8 @@ class PageController extends Controller
         $data['getSt5'] = DB::table('personals')
             ->where([
                 ['position_status_id', '=', '2'],
-                ['personals_departs.department_id', '=', '4']])
+                ['personals_departs.department_id', '=', '4']
+            ])
             ->join('prefix_names', 'personals.prefix_name_id', '=', 'prefix_names.id')
             ->join('positions', 'personals.position_id', '=', 'positions.id')
             ->join('personals_departs', 'personals_departs.personal_id', '=', 'personals.id')
@@ -196,7 +231,8 @@ class PageController extends Controller
         $data['getSt6'] = DB::table('personals')
             ->where([
                 ['position_status_id', '=', '2'],
-                ['personals_departs.department_id', '=', '5']])
+                ['personals_departs.department_id', '=', '5']
+            ])
             ->join('prefix_names', 'personals.prefix_name_id', '=', 'prefix_names.id')
             ->join('positions', 'personals.position_id', '=', 'positions.id')
             ->join('personals_departs', 'personals_departs.personal_id', '=', 'personals.id')
@@ -212,7 +248,4 @@ class PageController extends Controller
         $data['page'] = Page::where('slug', $slug)->first();
         return view('page.promote', $data);
     }
-
 }
-
-

@@ -127,8 +127,8 @@
                 <div class="list-group list-group-flush">
                     <a href="{{ url('course/1/1')}}" class="list-group-item list-group-item-action"><i
                             class="fas fa-angle-right text-primary"></i>{{" "."ระดับปริญญาตรี" }}</a>
-                    <a href="{{ url('course/2/1')}}" class="list-group-item list-group-item-action"><i
-                            class="fas fa-angle-right text-primary"></i>{{" "."ระดับปริญญาโท" }}</a>
+                   {{--  <a href="{{ url('course/2/1')}}" class="list-group-item list-group-item-action"><i
+                            class="fas fa-angle-right text-primary"></i>{{" "."ระดับปริญญาโท" }}</a> --}}
                     <a href="{{ url('course/3/1')}}" class="list-group-item list-group-item-action"><i
                             class="fas fa-angle-right text-primary"></i>{{" "."ระดับปริญญาเอก" }}</a>
 
