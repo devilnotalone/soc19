@@ -31,12 +31,24 @@ Route::get('/administrator', 'PageController@getAdministrator');
 Route::get('/personal/{id}', 'PageController@getPersonal');
 Route::get('/staff', 'PageController@getStaff');
 
+
 /* Galleries */
 Route::get('/album', 'GalleriesController@getAlbum');
 Route::get('/gallery/{id}', 'GalleriesController@getGallery');
 
-
-
+// Blc ร่องบัวลอย
+Route::view('/blccenter', 'rongbualoy.index');
+Route::view('/blccenter/history', 'rongbualoy.history');
+Route::view('/blccenter/blinfo001', 'rongbualoy.believe_info_001');
+Route::view('/blccenter/blinfo002', 'rongbualoy.believe_info_002');
+Route::view('/blccenter/blinfo003', 'rongbualoy.believe_info_003');
+Route::view('/blccenter/blinfo004', 'rongbualoy.believe_info_004');
+Route::view('/blccenter/blinfo005', 'rongbualoy.believe_info_005');
+Route::view('/blccenter/map', 'rongbualoy.map');
+Route::view('/blccenter/rongbualoy1_info', 'rongbualoy.rongbualoy1_info');
+Route::view('/blccenter/rongbualoy2_info', 'rongbualoy.rongbualoy2_info');
+Route::view('/blccenter/salarongthongbualoy_info', 'rongbualoy.salarongthongbualoy_info');
+Route::view('/blccenter/seree_info', 'rongbualoy.seree_info');
 
 
 

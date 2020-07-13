@@ -127,6 +127,7 @@ class PageController extends Controller
         return view('page.personal', $data);
     }
 
+
     public function getStaff()
     {
         /*  $data['getSt1'] = DB::table('personals')
@@ -211,4 +212,7 @@ class PageController extends Controller
         $data['page'] = Page::where('slug', $slug)->first();
         return view('page.promote', $data);
     }
+
 }
+
+
