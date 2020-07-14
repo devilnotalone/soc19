@@ -45,7 +45,11 @@
                                  @endempty
                                  <div class="card-body text-center">
                                      <h6 class="card-title mb-0 text-black">
+                                    @if ($st2->id == 53)
+                                        {{ "ดร.".$st2->name." ".$st2->surname}}
+                                    @else
                                          {{ $st2->prefix_name.$st2->name." ".$st2->surname}}
+                                    @endif
                                      </h6>
                                     <div class="card-text text-primary">{{ $st2->position_name }}</div>
                                  </div>

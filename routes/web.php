@@ -29,6 +29,7 @@ Route::get('/st_download/{id}', 'DownloadController@st_download');
 /* Personal */
 Route::get('/administrator', 'PageController@getAdministrator');
 Route::get('/personal/{id}', 'PageController@getPersonal');
+Route::get('/personal2/{id}', 'PageController@getPersonal2');
 Route::get('/staff', 'PageController@getStaff');
 
 

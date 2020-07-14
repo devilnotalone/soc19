@@ -93,15 +93,15 @@ class PageController extends Controller
 
         $data['getAd9'] = DB::table('personals')
             ->where([
-                ['major_position_id', 1],
-                ['major_id','<>',9]
+                ['major_id',9],
+                ['course_position_id',1]
             ])
 
-            ->join('major_positions', 'personals.major_position_id', '=', 'major_positions.id')
+            ->join('course_positions', 'personals.course_position_id', '=', 'course_positions.id')
             ->join('academics', 'personals.academic_id', '=', 'academics.id')
             ->join('majors', 'personals.major_id', '=', 'majors.id')
-            ->select('personals.*', 'major_positions.name as position_name', 'academics.short_name as academic_name', 'majors.short_name as major_name')
-            ->get();
+            ->select('personals.*', 'course_positions.name as position_name', 'academics.short_name as academic_name', 'majors.short_name as major_name')
+            ->first();
 
         return view('page.administrator', $data);
     }
@@ -157,6 +157,32 @@ class PageController extends Controller
         return view('page.personal', $data);
     }
 
+    public function getPersonal2($id)
+    {
+        $data['getPs1'] = DB::table('personals')
+            ->where('course_position_id', 1)
+            ->join('course_positions', 'personals.course_position_id', '=', 'course_positions.id')
+            ->join('academics', 'personals.academic_id', '=', 'academics.id')
+            ->join('majors', 'personals.major_id', '=', 'majors.id')
+            ->select('personals.*', 'course_positions.name as position_name', 'academics.short_name as academic_name', 'majors.name as major_name')
+            ->first();
+
+        $data['getPs2'] = DB::table('personals')
+            ->where('course_position_id', 2)
+            ->join('course_positions', 'personals.course_position_id', '=', 'course_positions.id')
+            ->join('academics', 'personals.academic_id', '=', 'academics.id')
+            ->select('personals.*', 'academics.short_name as academic_name')
+            ->get();
+
+        $data['getPs3'] = DB::table('personals')
+            ->where('course_position_id', 3)
+            ->join('course_positions', 'personals.course_position_id', '=', 'course_positions.id')
+            ->join('academics', 'personals.academic_id', '=', 'academics.id')
+            ->select('personals.*', 'academics.short_name as academic_name')
+            ->first();
+
+        return view('page.personal2', $data);
+    }
 
     public function getStaff()
     {

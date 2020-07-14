@@ -153,6 +153,22 @@
                     </div>
                 </div>
                 @endforeach
+                <div class="col-sm-12 col-md-4 col-lg-3 p-2">
+                    <div class="card border-0 shadow">
+                        @isset($getAd9->picture)
+                        <img src="{{ Voyager::image($getAd9->picture)}}" class="card-img-top"
+                            alt="...">
+                        @endisset
+                        @empty($getAd9->picture)
+                        <i class="fas fa-user fa-10x text-center text-muted"></i>
+                        @endempty <div class="card-body text-center">
+                            <h6 class="card-title mb-0 text-black">
+                                {{ $getAd9->academic_name.$getAd9->name." ".$getAd9->surname}}</h6>
+                            <div class="card-text text-primary">{!! $getAd9->position_name."หลักสูตร<br>".$getAd9->major_name
+                                !!}</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-12 col-sm-12 col-lg-3">
