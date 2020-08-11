@@ -14,10 +14,13 @@
      <li class="nav-item">
          <a class="nav-link" href="{{ url('administrator')}}">บุคลากร</a>
      </li>
-     <li class="nav-item">
+    {{--  <li class="nav-item">
          <a class="nav-link" href="{{ url('album')}}">ภาพกิจกรรม</a>
-     </li>
+     </li> --}}
      <li class="nav-item">
          <a class="nav-link" href="http://socresearch.crru.ac.th" target="_blank">งานวิจัย</a>
      </li>
+     <li class="nav-item">
+     <a class="nav-link" href="{{ url('academic')}}" target="_blank">งานวิชาการ</a>
+    </li>
  </ul>

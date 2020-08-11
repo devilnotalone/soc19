@@ -31,6 +31,7 @@ Route::get('/administrator', 'PageController@getAdministrator');
 Route::get('/personal/{id}', 'PageController@getPersonal');
 Route::get('/personal2/{id}', 'PageController@getPersonal2');
 Route::get('/staff', 'PageController@getStaff');
+Route::view('/academic', 'page.academic');
 
 
 /* Galleries */
@@ -51,9 +52,10 @@ Route::view('/blccenter/rongbualoy2_info', 'rongbualoy.rongbualoy2_info');
 Route::view('/blccenter/salarongthongbualoy_info', 'rongbualoy.salarongthongbualoy_info');
 Route::view('/blccenter/seree_info', 'rongbualoy.seree_info');
 
-
-
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+
+//สหกิจศึกษา (Cooperative education)
+Route::view('/coop', 'coop.page.index');
